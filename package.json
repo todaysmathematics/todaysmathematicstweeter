@@ -1,0 +1,24 @@
+{
+  "name": "todaysmathematicstweeter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "readFileAndShuffle.js",
+  "dependencies": {
+    "noget": "git+https://github.com/drewdocode/noget.git",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/todaysmathematics/todaysmathematicstweeter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/todaysmathematics/todaysmathematicstweeter/issues"
+  },
+  "homepage": "https://github.com/todaysmathematics/todaysmathematicstweeter#readme"
+}
