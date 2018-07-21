@@ -1,11 +1,15 @@
 var T = require('twit');
 var twitterApiConf = require(process.env.TMT_TWTR_CONF_PATH);
 var twitter = new T(twitterApiConf);
-var tweeter = require('./tweeter');
+var tweeter = require('./src/tweeter');
 var noget = require('noget/src/translator');
-
-var day = new Date().getDate();
-var date = (new Date().getMonth() + 1) + '/' + (new Date().getDate()) + '/' + (new Date().getFullYear());
+var date = new Date();
+var day = date.getDate();
+var dateStr = (date.getMonth() + 1) + '/' + (date.getDate()) + '/' + (date.getFullYear());
+var hourMath = 'At ' + date.getHours() + ' hundred hours, the hour is:\n' + noget.doTheMathOfNumber(date.getHours());
+if(day === date.getHours()) {
+	hourMath = 'At ' + date.getHours() + ' hundred hours, the hour is:\n' + noget.doTheMathOfNumber(date.getHours()).toUpperCase();
+}
 var hashtags = day % 2 == 0 ? '#todaysMathematics #suprememathematics' : '#todaysMath #supremealphabet';
-tweeter.tweet(date + '. Today\'s mathematics is - ' +  noget.toTodaysMath().toUpperCase() + ' - ' + hashtags);
+tweeter.tweet(dateStr + '. Today\'s mathematics is:\n' +  noget.toTodaysMath().toUpperCase() + '\n' + hourMath + '\n' + hashtags);
 
