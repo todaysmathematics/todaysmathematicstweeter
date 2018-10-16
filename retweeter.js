@@ -1,15 +1,15 @@
 var fs = require("fs");
-var tweeter = require('./src/tweeter');
-var shflr = require("./src/shflr");
-var topics = 'topics';
-var attemptsLog = './logs/searchQueriesAttemptedToday.log';
-var numRetweets = 33;
+var tweeter = require('/home/ec2-user/todaysmathematicstweeter/src/tweeter');
+var shflr = require("/home/ec2-user/todaysmathematicstweeter/src/shflr");
+var topics = '/home/ec2-user/todaysmathematicstweeter/topics';
+var attemptsLog = '/home/ec2-user/todaysmathematicstweeter/logs/searchQueriesAttemptedToday.log';
+var numRetweets = 21;
 var restTime = 777;
 
 var readSearchTermsFromFile = function() {
 	var searchTerms = [];
 	fs.readdirSync(topics).forEach(filename => {
-		var searchTermFileContent = fs.readFileSync('./' + topics + '/' + filename, "utf8");
+		var searchTermFileContent = fs.readFileSync(topics + '/' + filename, "utf8");
 		var searchTermSplits = searchTermFileContent.split("\n");
 		var searchTermLines = searchTermSplits.filter(term => term.trim().length > 0);
 		for(let term of searchTermLines) {

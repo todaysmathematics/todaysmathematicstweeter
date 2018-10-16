@@ -2,8 +2,8 @@ var T = require('twit');
 var fs = require("fs");
 var twitterApiConf = require(process.env.TMT_TWTR_CONF_PATH);
 var twitter = new T(twitterApiConf);
-var hitLog = './logs/searchQueriesThatHit.log';
-var missLog = './logs/searchQueriesThatMissed.log';
+var hitLog = '/home/ec2-user/todaysmathematicstweeter/logs/searchQueriesThatHit.log';
+var missLog = '/home/ec2-user/todaysmathematicstweeter/logs/searchQueriesThatMissed.log';
 
 tweet = function(message) {
 	twitter.post('statuses/update', { status: message }, function(err, data, response) {
