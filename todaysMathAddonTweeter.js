@@ -10,9 +10,9 @@ var day = ("0" + date.getDate()).slice(-2);
 var longdate = day % 2 == 1 ? date.getFullYear() + '' + month + '' + day : month + '' + day + '' + date.getFullYear();
 longdate = parseInt(longdate, 10);
 
-var intro = day % 2 == 0 ? 'Do the knowledge.' : 'Add on.';
-var hashtags = '#meditate';
+var intro = day % 2 == 0 ? 'Do the knowledge' : 'Add on';
+var hashtags = '#meditate #build';
 var math = noget.doTheMathOfNumber(longdate);
 
-tweeter.tweet(intro + ' - ' + longdate + '\n' + math  + '\n' + hashtags);
+tweeter.tweet(intro + ' - ' + longdate + '\n\n' + math  + '\n\n' + hashtags);
 
